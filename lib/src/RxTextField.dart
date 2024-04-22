@@ -8,7 +8,6 @@ class RxTextField extends StatelessWidget {
     Key? key,
     this.controller,
     this.focusNode,
-    this.undoController,
     this.decoration = const InputDecoration(),
     this.keyboardType,
     this.textInputAction,
@@ -19,10 +18,8 @@ class RxTextField extends StatelessWidget {
     this.textAlignVertical,
     this.textDirection,
     this.readOnly = false,
-    this.toolbarOptions,
     this.showCursor,
     this.autofocus = false,
-    this.statesController,
     this.obscuringCharacter = '•',
     this.obscureText = false,
     this.autocorrect = true,
@@ -37,7 +34,6 @@ class RxTextField extends StatelessWidget {
     this.onChanged,
     this.onEditingComplete,
     this.onSubmitted,
-    this.onAppPrivateCommand,
     this.inputFormatters,
     this.enabled,
     this.cursorWidth = 2.0,
@@ -74,7 +70,6 @@ class RxTextField extends StatelessWidget {
 
   final TextEditingController? controller;
   final FocusNode? focusNode;
-  final UndoHistoryController? undoController;
   final InputDecoration decoration;
   final TextInputType? keyboardType;
   final TextInputAction? textInputAction;
@@ -85,10 +80,8 @@ class RxTextField extends StatelessWidget {
   final TextAlignVertical? textAlignVertical;
   final TextDirection? textDirection;
   final bool readOnly;
-  final ToolbarOptions? toolbarOptions;
   final bool? showCursor;
   final bool autofocus;
-  final MaterialStatesController? statesController;
   final String obscuringCharacter;
   final bool obscureText;
   final bool autocorrect;
@@ -103,7 +96,6 @@ class RxTextField extends StatelessWidget {
   final void Function(String)? onChanged;
   final void Function()? onEditingComplete;
   final void Function(String)? onSubmitted;
-  final void Function(String, Map<String, dynamic>)? onAppPrivateCommand;
   final List<TextInputFormatter>? inputFormatters;
   final bool? enabled;
   final double cursorWidth;
@@ -137,21 +129,17 @@ class RxTextField extends StatelessWidget {
   final SpellCheckConfiguration? spellCheckConfiguration;
   final TextMagnifierConfiguration? magnifierConfiguration;
 
-  // static Widget? _defaultContextMenuBuilder(BuildContext context, EditableTextState editableTextState) {
-  //   return null;
-  // }
-
   static Widget _defaultContextMenuBuilder(BuildContext context, EditableTextState editableTextState) {
     // You can define your default context menu builder logic here
     return const SizedBox(); // Returning a placeholder widget
   }
+
   @override
   Widget build(BuildContext context) {
-    return RxTextField(
+    return TextField(
       key: key,
       controller: controller,
       focusNode: focusNode,
-      undoController: undoController,
       decoration: decoration,
       keyboardType: keyboardType,
       textInputAction: textInputAction,
@@ -162,10 +150,8 @@ class RxTextField extends StatelessWidget {
       textAlignVertical: textAlignVertical,
       textDirection: textDirection,
       readOnly: readOnly,
-      toolbarOptions: toolbarOptions,
       showCursor: showCursor,
       autofocus: autofocus,
-      statesController: statesController,
       obscuringCharacter: obscuringCharacter,
       obscureText: obscureText,
       autocorrect: autocorrect,
@@ -180,7 +166,6 @@ class RxTextField extends StatelessWidget {
       onChanged: onChanged,
       onEditingComplete: onEditingComplete,
       onSubmitted: onSubmitted,
-      onAppPrivateCommand: onAppPrivateCommand,
       inputFormatters: inputFormatters,
       enabled: enabled,
       cursorWidth: cursorWidth,
@@ -197,8 +182,6 @@ class RxTextField extends StatelessWidget {
       enableInteractiveSelection: enableInteractiveSelection,
       selectionControls: selectionControls,
       onTap: onTap,
-      onTapAlwaysCalled: onTapAlwaysCalled,
-      onTapOutside: onTapOutside,
       mouseCursor: mouseCursor,
       buildCounter: buildCounter,
       scrollController: scrollController,
@@ -207,7 +190,7 @@ class RxTextField extends StatelessWidget {
       contentInsertionConfiguration: contentInsertionConfiguration,
       clipBehavior: clipBehavior,
       restorationId: restorationId,
-      scribbleEnabled: scribbleEnabled,
+      enableIMEPersonalizedLearning: enableIMEPersonalizedLearning,
       contextMenuBuilder: contextMenuBuilder,
       canRequestFocus: canRequestFocus,
       spellCheckConfiguration: spellCheckConfiguration,

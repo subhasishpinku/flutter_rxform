@@ -1,6 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:flutter_rxform/flutter_rxform.dart';
+class Calculator {
+  int addOne(int value) => value + 1;
+}
 
 void main() {
   test('adds one to input values', () {

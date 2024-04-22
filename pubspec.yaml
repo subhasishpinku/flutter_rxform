@@ -1,7 +1,8 @@
 name: flutter_rxform
-description: "A new Flutter package project."
+description: "Reactive Forms for Flutter"
 version: 0.0.1
-homepage: https://dart.dev/tools/pub/pubspec
+homepage: https://github.com/subhasishpinku/flutter_rxform
+repository: https://github.com/subhasishpinku/flutter_rxform
 
 environment:
   sdk: '>=3.3.4 <4.0.0'
